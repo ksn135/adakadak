@@ -1,36 +1,28 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
-<nav role="navigation" id="nav">
-              <input class="trigger" type="checkbox" id="mainNavButton">
-              <label for="mainNavButton" onclick>Menu</label>
-              <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a>
-                    <ul>
-                      <li><a href="#">Sub Nav Item</a></li>
-                      <li><a href="#">Sub Nav Item</a>
-                        <ul>
-                          <li><a href="#">Sub Sub Nav Item</a></li>
-                          <li><a href="#">Sub Sub Nav Item</a></li>
-                          <li><a href="#">Sub Sub Nav Item</a></li>
-                          <li><a href="#">Sub Sub Nav Item</a></li>
-                        </ul>
-                      </li>
-                      <li><a href="#">Sub Nav Item</a></li>
-                      <li><a href="#">Sub Nav Item</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Specials</a></li>
-                <li><a href="#">Contact Us</a></li>
-              </ul>
-              </ul> 
-            </nav>
+  <div class="navigation-bar">
 
 
+    <div id="navigation-container">
+
+      <img src="/images/logo_small.jpg">
+
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Get in Touch</a></li>
+      </ul>
+    </div>
+
+
+    <div id="wrapper">
+        <div id="container">
+            <div id="welcome">
+                <h1>ADAKADAK</h1>
+            </div>
 
    
 <article class="comic">
@@ -56,21 +48,16 @@
 
 
 
-
+        </div>
+    </div>
 {% endblock %}
 
 {% block stylesheets %}
 <style>
 html, body {
-  margin: 25px;
-  -webkit-animation: bugfix infinite 1s;
-  /* needed for checkbox hack */
-  background: #eaf3de;
-  /*margin:0;*/
+  margin:0;
   padding:0;
 }
-
-
     /*body { background: #F5F5F5; font: 18px/1.5 sans-serif; }*/
 /*    h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
     h1 { font-size: 36px; }
@@ -222,147 +209,56 @@ display: -webkit-flex;
   background-size: 100% 100%;
 }
 
+.logo {
+  float: left;
+}
 /* ~~ Top Navigation Bar ~~ */
 
-@-webkit-keyframes bugfix {
-  from {
-    padding: 0;
-  }
-  to {
-    padding: 0;
-  }
-}
-/* needed for checkbox hack */
-h1, p {
-  color: #021320;
+#navigation-container {
+  width: 1200px;
+  margin: 0 auto;
+  height: 70px;
 }
 
-#nav {
-  position: relative;
-}
-#nav ul {
-  display: none;
+.navigation-bar {
+  background-color: #f89b02;
+  height: 70px;
   width: 100%;
-  list-style: none;
-  margin: 0px;
+  text-align:center;
+}
+.navigation-bar img{
+  float:left;
+}
+.navigation-bar ul {
   padding: 0px;
-}
-#nav ul li a {
-  display: block;
-  padding: 1em;
-  background: #e1a81d;
-  color: #021320;
-  text-decoration: none;
-  border-right: 1px solid #b48617;
-}
-#nav ul li a:hover {
-  background: #ca971a;
-}
-#nav ul li:last-of-type a {
-  border-right: 0px;
-}
-#nav ul li ul li a {
-  padding-left: 1.5em;
-}
-#nav ul li ul li ul li a {
-  padding-left: 3.125em;
-}
-#nav input.trigger {
-  position: absolute;
-  top: -9999px;
-  left: -9999px;
-}
-#nav input.trigger:checked ~ ul, #nav input.trigger:checked ~ ul li ul {
-  display: block !important;
-}
-@media (min-width: 48em) {
-  #nav input.trigger:checked ~ ul, #nav input.trigger:checked ~ ul li ul {
-    /* older flexbox */
-    display: -webkit-box;
-    display: -moz-box;
-    display: box;
-    -webkit-box-orient: horizontal;
-    -moz-box-orient: horizontal;
-    box-orient: horizontal;
-    /* newer flexbox */
-    display: flex;
-    flex-direction: row;
-  }
-}
-#nav label {
-  position: relative;
-  display: block;
-  min-height: 2em;
-  padding: .45em;
-  font-size: 1.1em;
-  margin: 0;
-  cursor: pointer;
-  background: #e1a81d;
-  line-height: 2em;
-  color: #021320;
-}
-#nav label:after {
-  position: absolute;
-  right: 1em;
-  top: .2em;
-  content: "\2261";
-  font-size: 1.8em;
-  color: #021320;
-}
-@media (min-width: 48em) {
-  #nav ul {
-    /* older flexbox */
-    display: -ms-flexbox;
-    flex-direction: -ms-row;
-    display: -webkit-box;
-    display: -moz-box;
-    display: box;
-    -webkit-box-orient: horizontal;
-    -moz-box-orient: horizontal;
-    box-orient: horizontal;
-    /* newer flexbox */
-    display: flex;
-    flex-direction: row;
-  }
-  #nav ul li {
-    position: relative;
-    text-align: center;
-    /* older flexbox */
-    -ms-flex: 1;
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    box-flex: 1;
-    /* newer flexbox */
-    flex: 1;
-  }
-  #nav ul li ul {
-    display: none !important;
-    position: absolute;
-    top: 3.0625em;
-    left: 0;
-    display: block;
-    width: 12.5em;
-    z-index: 200;
-  }
-  #nav ul li ul li {
-    text-align: left;
-  }
-  #nav ul li ul li ul {
-    z-index: 300;
-    top: 0px;
-    left: 12.4em;
-  }
-  #nav ul li ul li ul li a {
-    padding-left: 30px !important;
-  }
-  #nav ul li:hover > ul {
-    display: block !important;
-  }
-  #nav label {
-    display: none;
-  }
+  margin: 0px;
+  text-align: center;
+  display:inline-block;
+  vertical-align:top;
 }
 
+.navigation-bar li {
+  list-style-type: none;
+  padding: 0px;
+  height: 24px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  display: inline;
+}
+
+.navigation-bar li a {
+  color: black;
+  font-size: 16px;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  line-height: 70px;
+  padding: 5px 15px;
+  opacity: 0.7;
+}
+
+#menu {
+  float: right;
+}
 
 
 </style>
