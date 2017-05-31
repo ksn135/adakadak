@@ -1,0 +1,369 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<nav role="navigation" id="nav">
+              <input class="trigger" type="checkbox" id="mainNavButton">
+              <label for="mainNavButton" onclick>Menu</label>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a>
+                    <ul>
+                      <li><a href="#">Sub Nav Item</a></li>
+                      <li><a href="#">Sub Nav Item</a>
+                        <ul>
+                          <li><a href="#">Sub Sub Nav Item</a></li>
+                          <li><a href="#">Sub Sub Nav Item</a></li>
+                          <li><a href="#">Sub Sub Nav Item</a></li>
+                          <li><a href="#">Sub Sub Nav Item</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#">Sub Nav Item</a></li>
+                      <li><a href="#">Sub Nav Item</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Specials</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+              </ul> 
+            </nav>
+
+
+
+   
+<article class="comic">
+  <div class="panel">
+    <p class="text top-left">{% trans %}strange.song{% endtrans %}</p>
+    <p class="text bottom-right">...something amazing happened</p>
+  </div>
+  <div class="panel">
+    <p class="text top-left">Try resizing...</p>
+    <p class="text bottom-right">...it's responsive</p>
+  </div>
+  <div class="panel">
+    <p class="speech">A speech bubble</p>
+  </div>
+  <div class="panel"></div>
+  <div class="panel"></div>
+  <div class="panel"></div>
+  <div class="panel"></div>
+  <div class="panel">
+    <p class="text bottom-right">THE END</p>
+  </div>
+</article>
+
+
+
+
+{% endblock %}
+
+{% block stylesheets %}
+<style>
+html, body {
+  margin: 25px;
+  -webkit-animation: bugfix infinite 1s;
+  /* needed for checkbox hack */
+  background: #eaf3de;
+  /*margin:0;*/
+  padding:0;
+}
+
+
+    /*body { background: #F5F5F5; font: 18px/1.5 sans-serif; }*/
+/*    h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
+    h1 { font-size: 36px; }
+    h2 { font-size: 21px; margin-bottom: 1em; }
+    p { margin: 0 0 1em 0; }
+*/
+    a { color: #0000F0; }
+    a:hover { text-decoration: none; }
+    /*code { background: #F5F5F5; max-width: 100px; padding: 2px 6px; word-wrap: break-word; }*/
+    #wrapper { background: #FFF; margin: 1em auto; width: 95%; }
+    #container { padding: 2em; 
+/*    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+*/
+
+    }
+/*    #welcome, #status { margin-bottom: 2em; }
+    #welcome h1 span { display: block; font-size: 75%; }
+    #icon-status, #icon-book { float: left; height: 64px; margin-right: 1em; margin-top: -4px; width: 64px; }
+    #icon-book { display: none; }
+*/
+
+.comic {
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+  display:flex;
+  flex-wrap:wrap;
+  font-family:'Comic Sans', cursive;
+  padding:1vmin;
+}
+
+.panel {
+  background-color:#fff;
+  border:solid 2px #000;
+  box-shadow:0 6px 6px -6px #000;
+  display:inline-block;
+  flex:1 1;
+  height:200px;
+  margin:1vmin;
+  overflow:hidden;
+  position:relative;
+}
+
+.text {
+  background-color:#fff;
+  border:solid 2px #000;
+  margin:0;
+  padding:3px 10px;
+}
+
+.top-left {
+  left:-6px;
+  position:absolute;
+  top:-2px;
+  transform:skew(-15deg);
+}
+
+.bottom-right {
+  bottom:-2px;
+  position:absolute;
+  right:-6px;
+  transform:skew(-15deg);
+}
+
+.speech {
+  background-color:#fff;
+  border:solid 2px #000;
+  border-radius:12px;
+  display:inline-block;
+  margin:.5em;
+  padding:.5em 1em;
+  position:relative;
+}
+
+.speech:before {
+  border:solid 12px transparent;
+  border-left:solid 12px #000;
+  border-top:solid 12px #000;
+  bottom:-24px;
+  content:"";
+  height:0;
+  left:24px;
+  position:absolute;
+  transform:skew(-15deg);
+  width:0;
+}
+
+.speech:after {
+  border:solid 10px transparent;
+  border-left:solid 10px #fff;
+  border-top:solid 10px #fff;
+  bottom:-19px;
+  content:"";
+  height:0;
+  left:27px;
+  position:absolute;
+  transform:skew(-15deg); 
+  width:0;
+}
+
+.panel:nth-child(1) {
+  flex-basis: 350px;
+  background: url('/images/comics/mainpage/1.jpg') center no-repeat;
+  background-size: 100% 100%;
+}
+.panel:nth-child(2) {
+  flex-basis: 350px;
+  background: url('/images/comics/mainpage/2.jpg') center no-repeat;
+  background-size: 100% 100%;
+}
+.panel:nth-child(3) {
+  flex-basis: 350px;
+  background: url('/images/comics/mainpage/3.jpg') center no-repeat;
+  background-size: 100% 100%;
+}
+.panel:nth-child(4) {
+  flex-basis: 350px;
+  background: url('/images/comics/mainpage/4.jpg') center no-repeat;
+  background-size: 100% 100%;
+}
+.panel:nth-child(5) {
+  flex-basis: 350px;
+  background: url('/images/comics/mainpage/5.jpg') center no-repeat;
+  background-size: 100% 100%;
+}
+.panel:nth-child(6) {
+  flex-basis: 350px;
+  background: url('/images/comics/mainpage/6.jpg') center no-repeat;
+  background-size: 100% 100%;
+}
+.panel:nth-child(7) {
+  flex-basis: 350px;
+  background: url('/images/comics/mainpage/7.jpg') center no-repeat;
+  background-size: 100% 100%;
+}
+.panel:nth-child(8) {
+  flex-basis: 350px;
+  background: url('/images/comics/mainpage/8.jpg') center no-repeat;
+  background-size: 100% 100%;
+}
+
+/* ~~ Top Navigation Bar ~~ */
+
+@-webkit-keyframes bugfix {
+  from {
+    padding: 0;
+  }
+  to {
+    padding: 0;
+  }
+}
+/* needed for checkbox hack */
+h1, p {
+  color: #021320;
+}
+
+#nav {
+  position: relative;
+}
+#nav ul {
+  display: none;
+  width: 100%;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+#nav ul li a {
+  display: block;
+  padding: 1em;
+  background: #e1a81d;
+  color: #021320;
+  text-decoration: none;
+  border-right: 1px solid #b48617;
+}
+#nav ul li a:hover {
+  background: #ca971a;
+}
+#nav ul li:last-of-type a {
+  border-right: 0px;
+}
+#nav ul li ul li a {
+  padding-left: 1.5em;
+}
+#nav ul li ul li ul li a {
+  padding-left: 3.125em;
+}
+#nav input.trigger {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+#nav input.trigger:checked ~ ul, #nav input.trigger:checked ~ ul li ul {
+  display: block !important;
+}
+@media (min-width: 48em) {
+  #nav input.trigger:checked ~ ul, #nav input.trigger:checked ~ ul li ul {
+    /* older flexbox */
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    box-orient: horizontal;
+    /* newer flexbox */
+    display: flex;
+    flex-direction: row;
+  }
+}
+#nav label {
+  position: relative;
+  display: block;
+  min-height: 2em;
+  padding: .45em;
+  font-size: 1.1em;
+  margin: 0;
+  cursor: pointer;
+  background: #e1a81d;
+  line-height: 2em;
+  color: #021320;
+}
+#nav label:after {
+  position: absolute;
+  right: 1em;
+  top: .2em;
+  content: "\2261";
+  font-size: 1.8em;
+  color: #021320;
+}
+@media (min-width: 48em) {
+  #nav ul {
+    /* older flexbox */
+    display: -ms-flexbox;
+    flex-direction: -ms-row;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    box-orient: horizontal;
+    /* newer flexbox */
+    display: flex;
+    flex-direction: row;
+  }
+  #nav ul li {
+    position: relative;
+    text-align: center;
+    /* older flexbox */
+    -ms-flex: 1;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    /* newer flexbox */
+    flex: 1;
+  }
+  #nav ul li ul {
+    display: none !important;
+    position: absolute;
+    top: 3.0625em;
+    left: 0;
+    display: block;
+    width: 12.5em;
+    z-index: 200;
+  }
+  #nav ul li ul li {
+    text-align: left;
+  }
+  #nav ul li ul li ul {
+    z-index: 300;
+    top: 0px;
+    left: 12.4em;
+  }
+  #nav ul li ul li ul li a {
+    padding-left: 30px !important;
+  }
+  #nav ul li:hover > ul {
+    display: block !important;
+  }
+  #nav label {
+    display: none;
+  }
+}
+
+
+
+</style>
+{% endblock %}

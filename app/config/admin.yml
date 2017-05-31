@@ -1,0 +1,14 @@
+easy_admin:
+    site_name: 'ADAKADAK'
+    design:
+        brand_color: '#eaf3de'
+        color_scheme: 'light' 
+    # entities:
+    #     Customer:
+    #         class: AppBundle\Entity\Customer
+    #         label: 'Customers'
+    #         list:
+    #             title: "Most recent customers"
+    #     - AppBundle\Entity\Product
+    #     - AppBundle\Entity\Category
+    #     - AppBundle\Entity\User   
