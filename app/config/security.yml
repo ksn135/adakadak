@@ -14,29 +14,19 @@ security:
         in_memory:
             memory:
                 users:
-                    admin: { password: P0w3r, roles: [ 'ROLE_ADMIN' ] }
+                    '%adminarea_user%': { password: 'adminarea_password', roles: [ 'ROLE_ADMIN' ] }
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            pattern: ^/(_(profiler|wdt|trans)|css|images|js)/
             security: false
 
         main:
             anonymous: ~
-            # activate different ways to authenticate
-
-            # http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-            #http_basic: ~
-
-            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
-            #form_login: ~
-        secured_area:
-            pattern:    ^/admin
-            anonymous: ~
-            http_basic:
-                realm: "Please, Log in"
+            http_basic: 
+                realm: "ADAKDAK Admin Area"
 
     access_control:
+        - { path: ^/(ru|en)/tracks, roles: ROLE_ADMIN }
         - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin, roles: ROLE_ADMIN }

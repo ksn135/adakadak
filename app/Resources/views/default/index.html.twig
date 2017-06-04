@@ -3,7 +3,29 @@
 
 {% block body %}
 
-<article class="comic">
+{% set uripath = app.request.attributes.get('_route') %}
+{% set params = app.request.attributes.get('_route_params') %}
+{% set locale = app.request.getLocale() %}
+{% set newlocale = 'ru' %}{% if locale == 'ru' %}{% set newlocale = 'en' %}{% endif %}
+
+    <nav class="fixed-nav">
+      <a href="#top" id="logo"><img src="/images/logo_small.jpg" height="48" width="48" /></a>
+      <a href="#" id="play_stop" alt="{% trans %}label.play_stop{% endtrans %}" title="{% trans %}label.play_stop{% endtrans %}"><img src="/images/play_stop.png" height="32" width="32" /></a>
+    <ul> 
+        <li><a href="#history">{% trans %}menu.history{% endtrans %}</a></li>
+        <li><a href="#player">{% trans %}menu.player{% endtrans %}</a></li>
+        <li><a href="#contacts">{% trans %}menu.contacts{% endtrans %}</a></li>
+        <li><a href="{{ path(uripath,params|merge({ '_locale': newlocale })) }}">{% trans %}menu.locale{% endtrans %}</a></li>
+    </ul>
+       <a target="_new" href="//www.instagram.com/adakadak_electro/"><img src="/images/instagram.png" height="32" width="32" /></a>
+
+    </nav>
+<main>
+    <img id="top" src="/images/logo_medium.jpg" alt="logo" />
+
+
+  <h1 id="history">{% trans %}label.history{% endtrans %}</h1>
+<article  class="comic">
   <div class="panel">
     <p class="text top-left">{% trans %}label.panel1{% endtrans %}</p>
   </div>
@@ -32,4 +54,157 @@
   </div>
 </article>
 
+  <h1 id="player">{% trans %}label.player{% endtrans %}</h1>
+<div class="container">
+    <div class="column add-bottom">
+        <div id="mainwrap">
+            <div id="nowPlay">
+                <span class="left" id="npAction">{% trans %}player.paused{% endtrans %}</span>
+                <span class="right" id="npTitle"></span>
+            </div>
+            <div id="audiowrap">
+                <div id="audio0">
+                    <audio preload id="audio1" controls="controls">{% trans %}no.audio{% endtrans %}</audio>
+                </div>
+                <div id="tracks">
+                    <a id="btnPrev">&laquo;</a>
+                    <a id="btnNext">&raquo;</a>
+                </div>
+            </div>
+            <div id="plwrap">
+                <ul id="plList"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <h1 id="contacts">{% trans %}label.contacts{% endtrans %}</h1>
+
+  <div class="box">
+    <p>{% trans %}label.phone{% endtrans %}: <a href="tel://7-903-267-2222">+7 903 267 22 22</a>
+    <p>{% trans %}label.email{% endtrans %}: <a href="mailto:adakadak@adakadak.ru">adakadak@adakadak.ru</a>
+  </div>
+
+</main>
+
 {% endblock %}
+
+
+{% block javascripts %}
+    
+    <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+    <!-- // <script type="text/javascript" src="//api.html5media.info/1.1.8/html5media.min.js"></script> -->
+    <script type="text/javascript">
+// html5media enables <video> and <audio> tags in all major browsers
+// External File: https://api.html5media.info/1.1.8/html5media.min.js
+
+
+// Add user agent as an attribute on the <html> tag...
+// Inspiration: https://css-tricks.com/ie-10-specific-styles/
+var audio, b = document.documentElement;
+b.setAttribute('data-useragent', navigator.userAgent);
+b.setAttribute('data-platform', navigator.platform);
+
+
+// HTML5 audio player + playlist controls...
+// Inspiration: http://jonhall.info/how_to/create_a_playlist_for_html5_audio
+// Mythium Archive: https://archive.org/details/mythium/
+jQuery(function ($) {
+    var supportsAudio = !!document.createElement('audio').canPlayType;
+    if (supportsAudio) {
+        var index = 0,
+            playing = false,
+            mediaPath = '/uploads/',
+            extension = '',
+            tracks = JSON.parse('{{ tracks|json_encode(constant('JSON_PRETTY_PRINT'))|e('js') }}'),
+            buildPlaylist = $.each(tracks, function(key, value) {
+                var trackNumber = value.track,
+                    trackName = value.name,
+                    trackLength = value.length;
+                if (trackNumber.toString().length === 1) {
+                    trackNumber = '0' + trackNumber;
+                } else {
+                    trackNumber = '' + trackNumber;
+                }
+                $('#plList').append('<li><div class="plItem"><div class="plNum">' + trackNumber + '.</div><div class="plTitle">' + trackName + '</div><div class="plLength">' + trackLength + '</div></div></li>');
+            }),
+            trackCount = tracks.length,
+            npAction = $('#npAction'),
+            npTitle = $('#npTitle'),
+            audio = $('#audio1').bind('play', function () {
+                playing = true;
+                npAction.text('{% trans %}player.playing{% endtrans %}');
+            }).bind('pause', function () {
+                playing = false;
+                npAction.text('{% trans %}player.paused{% endtrans %}');
+            }).bind('ended', function () {
+                npAction.text('{% trans %}player.paused{% endtrans %}');
+                if ((index + 1) < trackCount) {
+                    index++;
+                    loadTrack(index);
+                    audio.play();
+                } else {
+                    audio.pause();
+                    index = 0;
+                    loadTrack(index);
+                }
+            }).get(0),
+            btnPrev = $('#btnPrev').click(function () {
+                if ((index - 1) > -1) {
+                    index--;
+                    loadTrack(index);
+                    if (playing) {
+                        audio.play();
+                    }
+                } else {
+                    audio.pause();
+                    index = 0;
+                    loadTrack(index);
+                }
+            }),
+            btnNext = $('#btnNext').click(function () {
+                if ((index + 1) < trackCount) {
+                    index++;
+                    loadTrack(index);
+                    if (playing) {
+                        audio.play();
+                    }
+                } else {
+                    audio.pause();
+                    index = 0;
+                    loadTrack(index);
+                }
+            }),
+            li = $('#plList li').click(function () {
+                var id = parseInt($(this).index());
+                if (id !== index) {
+                    playTrack(id);
+                }
+            }),
+            loadTrack = function (id) {
+                $('.plSel').removeClass('plSel');
+                $('#plList li:eq(' + id + ')').addClass('plSel');
+                npTitle.text(tracks[id].name);
+                index = id;
+                audio.src = mediaPath + tracks[id].file + extension;
+            },
+            playTrack = function (id) {
+                loadTrack(id);
+                audio.play();
+            };
+        // extension = audio.canPlayType('audio/mpeg') ? '.mp3' : audio.canPlayType('audio/ogg') ? '.ogg' : '';
+        loadTrack(index);
+        audio.play();
+    }
+
+
+    $('#play_stop').on('click', function() {
+        if (playing) audio.pause();
+        else audio.play();
+        return false;
+    });
+
+
+});
+    </script>  
+{% endblock javascripts %}

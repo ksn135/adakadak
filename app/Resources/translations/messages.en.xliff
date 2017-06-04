@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2017-06-04T20:15:20Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="e8716a7ccdd31b5adb4e5bd72ac604fcc1d47dea" resname="label.contacts">
+        <source>label.contacts</source>
+        <target>Contacts</target>
+        <jms:reference-file line="81">/Resources/views/default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fc8413fdfd53e23e0f6ad278406aa827b4548642" resname="label.email">
+        <source>label.email</source>
+        <target>Email</target>
+        <jms:reference-file line="85">/Resources/views/default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0102d27f5a24de768e4fbeab85f41f683bdaa4da" resname="label.history">
+        <source>label.history</source>
+        <target>History</target>
+        <jms:reference-file line="27">/Resources/views/default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d00088ee180ca240d99bc5345f0b251612ef6985" resname="label.panel1">
+        <source>label.panel1</source>
+        <target>The duck studied music at home.</target>
+        <jms:reference-file line="30">/Resources/views/default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ccfba285cc4a965bf9344b580c28a5adbe38a211" resname="label.panel3">
+        <source>label.panel3</source>
+        <target>Let's get started!</target>
+        <jms:reference-file line="38">/Resources/views/default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="28e0bf577681b3f56e61466ea34132e3649ad94e" resname="label.panel4">
+        <source>label.panel4</source>
+        <target>The duck was taken to the alien ship.</target>
+        <jms:reference-file line="41">/Resources/views/default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bab2015dcb1160cf8e5f5012175712efb9afe3d5" resname="label.panel5">
+        <source>label.panel5</source>
+        <target>On the ship aliens put on the duck the special costume.</target>
+        <jms:reference-file line="44">/Resources/views/default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6e3a6a0be4670b6ebfc0e36105f635c173fe51e0" resname="label.panel6">
+        <source>label.panel6</source>
+        <target>Hmmm... What's happens?</target>
+        <jms:reference-file line="47">/Resources/views/default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="255d50d39e8c3b71438187584fa22fe776736bf1" resname="label.panel7">
+        <source>label.panel7</source>
+        <target>The duck grew up with aliens who called him adakadak</target>
+        <jms:reference-file line="50">/Resources/views/default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="989d6c6cd9ea142c8a1075b9e7000072df932215" resname="label.panel8">
+        <source>label.panel8</source>
+        <target>Since that adakadak rips up dance floors and unites millions hearts by his amazing electronic music</target>
+        <jms:reference-file line="53">/Resources/views/default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f58d9659289c81ce01f745761be6eb7f5186a80a" resname="label.phone">
+        <source>label.phone</source>
+        <target>Phone</target>
+        <jms:reference-file line="84">/Resources/views/default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2b420fc27e9c827070622e54502161c90c200ff1" resname="label.play_stop">
+        <source>label.play_stop</source>
+        <target>Play/stop music</target>
+        <jms:reference-file line="13">/Resources/views/default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3b78f446f7082667ceda0e37ff01ec954c0f9d0f" resname="label.player">
+        <source>label.player</source>
+        <target>Tracks</target>
+        <jms:reference-file line="57">/Resources/views/default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3a30fec361edbfc2fc12538cf581a3a1ac5dff36" resname="menu.contacts">
+        <source>menu.contacts</source>
+        <target>Contacts</target>
+        <jms:reference-file line="17">/Resources/views/default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="07944ccfec57cfce198fd7cfe39c378636d8bf7f" resname="menu.history">
+        <source>menu.history</source>
+        <target>History</target>
+        <jms:reference-file line="15">/Resources/views/default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4a11b10726728d6e5c18457bae359868dceda694" resname="menu.locale">
+        <source>menu.locale</source>
+        <target>РУС</target>
+        <jms:reference-file line="18">/Resources/views/default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="618217a49151a5f59c12e6678a014c15bafa86c6" resname="menu.player">
+        <source>menu.player</source>
+        <target>Tracks</target>
+        <jms:reference-file line="16">/Resources/views/default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f322ad97d720466c3fef9a73aca0ee5c5c33fb69" resname="no.audio">
+        <source>no.audio</source>
+        <target>Your browser does not support HTML5 Audio!</target>
+        <jms:reference-file line="67">/Resources/views/default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b75d954131771cd4ccafad74154effbf51258ac1" resname="player.paused">
+        <source>player.paused</source>
+        <target>Paused...</target>
+        <jms:reference-file line="139">/Resources/views/default/index.html.twig</jms:reference-file>
+        <jms:reference-file line="141">/Resources/views/default/index.html.twig</jms:reference-file>
+        <jms:reference-file line="62">/Resources/views/default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="702fcca55485c1716306bd394afff52aac2be433" resname="player.playing">
+        <source>player.playing</source>
+        <target>Now Playing...</target>
+        <jms:reference-file line="136">/Resources/views/default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8c3fb25498dcd69b9ba351bb5426b8bb6573afad" resname="speech.bubble.alien1">
+        <source>speech.bubble.alien1</source>
+        <target>Do you hear that strange sound?</target>
+        <jms:reference-file line="33">/Resources/views/default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f806b618be3606279c9702a705e30726c048d549" resname="speech.bubble.alien2">
+        <source>speech.bubble.alien2</source>
+        <target>Let's have a look...</target>
+        <jms:reference-file line="34">/Resources/views/default/index.html.twig</jms:reference-file>
+      </trans-unit>
+
+
+      <trans-unit resname="Track">
+        <source>Track</source>
+        <target>track</target>
+        <jms:reference-file>/config/admin.yml</jms:reference-file>
+      </trans-unit>
+      <trans-unit resname="menu.track">
+        <source>menu.track</source>
+        <target>Tracks</target>
+        <jms:reference-file>/config/admin.yml</jms:reference-file>
+      </trans-unit>
+      <trans-unit resname="menu.site">
+        <source>menu.site</source>
+        <target>Return to Site</target>
+        <jms:reference-file>/config/admin.yml</jms:reference-file>
+      </trans-unit>
+      <trans-unit resname="field.position">
+        <source>field.position</source>
+        <target>Position</target>
+        <jms:reference-file>/config/admin.yml</jms:reference-file>
+      </trans-unit>
+      <trans-unit resname="field.name">
+        <source>field.name</source>
+        <target>Name</target>
+        <jms:reference-file>/config/admin.yml</jms:reference-file>
+      </trans-unit>
+      <trans-unit resname="field.length">
+        <source>field.length</source>
+        <target>Length (MM:SS)</target>
+        <jms:reference-file>/config/admin.yml</jms:reference-file>
+      </trans-unit>
+      <trans-unit resname="field.isVisible">
+        <source>field.isVisible</source>
+        <target>Is visible</target>
+        <jms:reference-file>/config/admin.yml</jms:reference-file>
+      </trans-unit>
+      <trans-unit resname="field.mp3File">
+        <source>field.mp3File</source>
+        <target>MP3 file</target>
+        <jms:reference-file>/config/admin.yml</jms:reference-file>
+      </trans-unit>
+      <trans-unit resname="field.updatedAt">
+        <source>field.updatedAt</source>
+        <target>Updated at</target>
+        <jms:reference-file>/config/admin.yml</jms:reference-file>
+      </trans-unit>
+      <trans-unit resname="list.%entity_label%">
+        <source>list.%entity_label%</source>
+        <target>List of %entity_label%s</target>
+        <jms:reference-file>/config/admin.yml</jms:reference-file>
+      </trans-unit>
+      <trans-unit resname="list.menu.track">
+        <source>list.menu.track</source>
+        <target>List of tracks</target>
+        <jms:reference-file>/config/admin.yml</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
