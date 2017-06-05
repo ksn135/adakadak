@@ -15,3 +15,16 @@
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
+.DS_Store
+.bash*
+.cache
+.config
+.fast-php
+.local
+.php70
+.ssh
+.touch
+/http
+/logs/
+.gitconfig
+
