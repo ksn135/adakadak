@@ -1,11 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2017-06-04T20:15:20Z" source-language="en" target-language="ru" datatype="plaintext" original="not.available">
+  <file date="2017-06-05T17:41:10Z" source-language="en" target-language="ru" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
     </header>
     <body>
+      <trans-unit id="b1c5a7af06ba8c911bcfd11f72d7463fed9a472d" resname="Track">
+        <source>Track</source>
+        <target>трек</target>
+        <jms:reference-file>/config/admin.yml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0c8eb0fe67b2277e5d4a7c44fff2e01517bca65c" resname="field.isVisible">
+        <source>field.isVisible</source>
+        <target>Видимость</target>
+        <jms:reference-file>/config/admin.yml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1797792a734b9ccafcf944e1039026ce9771b741" resname="field.length">
+        <source>field.length</source>
+        <target>Длинна (мм:сс)</target>
+        <jms:reference-file>/config/admin.yml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cf538d4f49e8d6952ee21bb08c7f73c2165afcc5" resname="field.mp3File">
+        <source>field.mp3File</source>
+        <target>MP3 файл</target>
+        <jms:reference-file>/config/admin.yml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9884001772588f97b448cc5241846c362b7068cc" resname="field.name">
+        <source>field.name</source>
+        <target>Наименование</target>
+        <jms:reference-file>/config/admin.yml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ba1c5874875766162fdfb40f2e50d684955de844" resname="field.position">
+        <source>field.position</source>
+        <target>Позиция</target>
+        <jms:reference-file>/config/admin.yml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2cafa70639ed39567af1a15ed306f38f74505404" resname="field.updatedAt">
+        <source>field.updatedAt</source>
+        <target>Обновлено</target>
+        <jms:reference-file>/config/admin.yml</jms:reference-file>
+      </trans-unit>
       <trans-unit id="e8716a7ccdd31b5adb4e5bd72ac604fcc1d47dea" resname="label.contacts">
         <source>label.contacts</source>
         <target>Контакты</target>
@@ -71,6 +106,16 @@
         <target>Треки</target>
         <jms:reference-file line="57">/Resources/views/default/index.html.twig</jms:reference-file>
       </trans-unit>
+      <trans-unit id="55236637edd2666c02c7e01d841a721b925dc687" resname="list.%entity_label%">
+        <source>list.%entity_label%</source>
+        <target>Список %entity_label%ов</target>
+        <jms:reference-file>/config/admin.yml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5d45da801cddf3b47a6bb267b402d9e3b8cad23a" resname="list.menu.track">
+        <source>list.menu.track</source>
+        <target>Список треков</target>
+        <jms:reference-file>/config/admin.yml</jms:reference-file>
+      </trans-unit>
       <trans-unit id="3a30fec361edbfc2fc12538cf581a3a1ac5dff36" resname="menu.contacts">
         <source>menu.contacts</source>
         <target>Контакты</target>
@@ -90,6 +135,16 @@
         <source>menu.player</source>
         <target>Треки</target>
         <jms:reference-file line="16">/Resources/views/default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bffd6f474a357aa113b1fb4810407e15de29bc8c" resname="menu.site">
+        <source>menu.site</source>
+        <target>Назад к сайту</target>
+        <jms:reference-file>/config/admin.yml</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7203362f35eb7526969a954436179901ca0777d0" resname="menu.track">
+        <source>menu.track</source>
+        <target>Треки</target>
+        <jms:reference-file>/config/admin.yml</jms:reference-file>
       </trans-unit>
       <trans-unit id="f322ad97d720466c3fef9a73aca0ee5c5c33fb69" resname="no.audio">
         <source>no.audio</source>
@@ -118,61 +173,6 @@
         <target>Это надо срочно исправить!</target>
         <jms:reference-file line="34">/Resources/views/default/index.html.twig</jms:reference-file>
       </trans-unit>
-      <trans-unit resname="Track">
-        <source>Track</source>
-        <target>трек</target>
-        <jms:reference-file>/config/admin.yml</jms:reference-file>
-      </trans-unit>
-      <trans-unit resname="menu.track">
-        <source>menu.track</source>
-        <target>Треки</target>
-        <jms:reference-file>/config/admin.yml</jms:reference-file>
-      </trans-unit>
-      <trans-unit resname="menu.site">
-        <source>menu.site</source>
-        <target>Назад к сайту</target>
-        <jms:reference-file>/config/admin.yml</jms:reference-file>
-      </trans-unit>
-      <trans-unit resname="field.position">
-        <source>field.position</source>
-        <target>Позиция</target>
-        <jms:reference-file>/config/admin.yml</jms:reference-file>
-      </trans-unit>
-      <trans-unit resname="field.name">
-        <source>field.name</source>
-        <target>Наименование</target>
-        <jms:reference-file>/config/admin.yml</jms:reference-file>
-      </trans-unit>
-      <trans-unit resname="field.length">
-        <source>field.length</source>
-        <target>Длинна (мм:сс)</target>
-        <jms:reference-file>/config/admin.yml</jms:reference-file>
-      </trans-unit>
-      <trans-unit resname="field.isVisible">
-        <source>field.isVisible</source>
-        <target>Видимость</target>
-        <jms:reference-file>/config/admin.yml</jms:reference-file>
-      </trans-unit>
-      <trans-unit resname="field.mp3File">
-        <source>field.mp3File</source>
-        <target>MP3 файл</target>
-        <jms:reference-file>/config/admin.yml</jms:reference-file>
-      </trans-unit>
-      <trans-unit resname="field.updatedAt">
-        <source>field.updatedAt</source>
-        <target>Обновлено</target>
-        <jms:reference-file>/config/admin.yml</jms:reference-file>
-      </trans-unit>
-      <trans-unit resname="list.%entity_label%">
-        <source>list.%entity_label%</source>
-        <target>Список %entity_label%ов</target>
-        <jms:reference-file>/config/admin.yml</jms:reference-file>
-      </trans-unit>
-      <trans-unit resname="list.menu.track">
-        <source>list.menu.track</source>
-        <target>Список треков</target>
-        <jms:reference-file>/config/admin.yml</jms:reference-file>
-      </trans-unit>      
     </body>
   </file>
 </xliff>

@@ -10,10 +10,10 @@
 
     <nav class="fixed-nav">
 <!--      <a href="#top" id="logo"><img src="/images/logo_small.jpg" height="48" width="48" /></a>
-      <a href="#" id="play_stop" alt="{% trans %}label.play_stop{% endtrans %}" title="{% trans %}label.play_stop{% endtrans %}"><img src="/images/play_stop.png" height="32" width="32" /></a>
 -->    
+      <a href="#" id="play_stop" alt="{% trans %}label.play_stop{% endtrans %}" title="{% trans %}label.play_stop{% endtrans %}"><img src="/images/play_stop.png" height="32" width="32" /></a>
               
-       <a target="_new" href="//www.instagram.com/adakadak_electro/" id="adak">ADAKADAK_ELECTRO <img src="/images/instagram.png" height="32" width="32" /></a>
+       <a target="_new" href="//www.instagram.com/adakadak_electro/" id="adak">ADAKADAK <img src="/images/instagram.png" height="32" width="32" /></a>
         
 <!--        <li><a href="#history">{% trans %}menu.history{% endtrans %}</a></li>
         <li><a href="#player">{% trans %}menu.player{% endtrans %}</a></li>
@@ -29,8 +29,21 @@
     <div id="top">
          <img src="/images/logo_round.jpg" alt="logo" />
              <div class="box">
-                 <p>{% trans %}label.phone{% endtrans %}: <a href="tel://7-903-267-2222">+7 903 267 22 22</a>
-                 <p>{% trans %}label.email{% endtrans %}: <a href="mailto:adakadak@adakadak.ru">adakadak@adakadak.ru</a>
+            {#     <h2>{% trans %}label.phone{% endtrans %}: 
+            <a href="tel://7-903-267-2222"> 
+#}
+
+<p><a href="tel:+79032672222"> +7(903)267-22-22</a><br>
+
+{#                 <h2>{% trans %}label.email{% endtrans %}: #}
+
+<a href="mailto:concert@adakadakelectro.com">concert@adakadakelectro.com</a><br>
+<a href="mailto:pr@adakadakelectro.com">pr@adakadakelectro.com</a><br>
+<a href="mailto:music@adakadakelectro.com">music@adakadakelectro.com</a>
+
+{#
+</h2>
+#}
               </div>
     </div>
 
@@ -64,8 +77,11 @@
   </div>
 </article>
 
-  <h1 id="player">{% trans %}label.player{% endtrans %}</h1>
-<div class="container">
+{#  <h1 id="player">{% trans %}label.player{% endtrans %}</h1> #}
+
+{# 
+
+<div class="container" style="display:none;">
     <div class="column add-bottom">
         <div id="mainwrap">
             <div id="nowPlay">
@@ -90,18 +106,71 @@
 
 <!--  <h1 id="contacts">{% trans %}label.contacts{% endtrans %}</h1>
 -->
-
+#} 
 
 </main>
+
+<div id="hidden_audio" style="display:none;">
+<audio preload autoplay id="audio1" style="display:none" controls src="/uploads/Roman_S_Simple_Bass_House_April_4_15.mp3"></audio>
+</div>
 
 {% endblock %}
 
 
 {% block javascripts %}
-    
+    {#
     <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
     <!-- // <script type="text/javascript" src="//api.html5media.info/1.1.8/html5media.min.js"></script> -->
+#}
     <script type="text/javascript">
+
+window.onload = function() {
+            var audioEl = document.getElementById("audio1"), loaded = false;
+         
+            audioEl.loop = true;
+//            audioEl.play();
+
+
+    audioEl.oncanplaythrough = function () {
+	audioEl.play();
+    };
+
+            audioEl.load();
+
+
+    var btn = document.getElementById("play_stop");
+    btn.onclick = function() {
+	if (audioEl.paused == false) {
+    	    audioEl.pause();
+        }
+	else {
+    	    audioEl.play();
+    	}
+        return false;
+    }
+
+    window.addEventListener('touchstart', function() { if(!loaded) { audioEl.load(); loaded=true; } }, false);
+
+};
+
+{#
+function main(){
+ 
+    setTimeout("playAudio();",20000); //any call to playAudio will make the audio play after a click
+}
+ 
+document.onclick = function(){
+    document.getElementById("audio1").load();
+}
+ 
+function playAudio(){
+    document.getElementById("audio1").play();
+}
+
+#}
+
+{#
+
 // html5media enables <video> and <audio> tags in all major browsers
 // External File: https://api.html5media.info/1.1.8/html5media.min.js
 
@@ -201,6 +270,7 @@ jQuery(function ($) {
             };
         // extension = audio.canPlayType('audio/mpeg') ? '.mp3' : audio.canPlayType('audio/ogg') ? '.ogg' : '';
         loadTrack(index);
+        audio.load();
         audio.play();
     }
 
@@ -213,5 +283,7 @@ jQuery(function ($) {
 
 
 });
+
+#}
     </script>  
 {% endblock javascripts %}
